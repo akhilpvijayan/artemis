@@ -1,19 +1,19 @@
-name: Deploy Static Page to Firebase
+name: Firebase Deploy
 
 on:
   push:
     branches:
-      - main  # deploys when you push to main
+      - main  # make sure your branch is 'main'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy to Firebase Hosting
+      - name: Deploy to Firebase
         uses: w9jds/firebase-action@v2.2.0
         with:
           args: deploy --only hosting
